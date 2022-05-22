@@ -40,28 +40,60 @@ class Data:
 
 files = ['names.txt', 'emails.txt', 'file_names.txt', 'color.txt']
 
-
-def MainFunc():
-    with open('MOCK_DATA.txt','r') as readOn:
-        for i in readOn:
-            stringM = i.split()
-            stringM[0] += ' ' + stringM.pop(1)
-            if len(stringM) > 4:
+while 1:
+    comand = input("Выберите \n1:Full name \n2:emails \n3:File_name \n4:color /5:Exit")
+    if comand == "1":
+        with open('MOCK_DATA.txt', 'r') as readOn:
+            for i in readOn:
+                stringM = i.split()
                 stringM[0] += ' ' + stringM.pop(1)
-            info = Data(*stringM)
-            with open(files[0], 'a') as fullN:
-                fullN.write(info.full_name)
-                fullN.write('\r')
-            with open(files[1], 'a') as emailN:
-                emailN.write(info.email)
-                emailN.write('\r')
-            with open(files[2], 'a') as fileN:
-                fileN.write(info.file_name)
-                fileN.write('\r')
-            with open(files[3], 'a') as colorN:
-                colorN.write(info.color)
-                colorN.write('\r')
-MainFunc()
+                if len(stringM) > 4:
+                    stringM[0] += ' ' + stringM.pop(1)
+                info = Data(*stringM)
+                with open(files[0], 'a') as fullN:
+                    fullN.write(info.full_name)
+                    fullN.write('\r')
+    elif comand == "2":
+        with open('MOCK_DATA.txt', 'r') as readOn:
+            for i in readOn:
+                stringM = i.split()
+                stringM[0] += ' ' + stringM.pop(1)
+                if len(stringM) > 4:
+                    stringM[0] += ' ' + stringM.pop(1)
+                info = Data(*stringM)
+                with open(files[1], 'a') as emailN:
+                    emailN.write(info.email)
+                    emailN.write('\r')
+    elif comand == "3":
+        with open('MOCK_DATA.txt', 'r') as readOn:
+            for i in readOn:
+                stringM = i.split()
+                stringM[0] += ' ' + stringM.pop(1)
+                if len(stringM) > 4:
+                    stringM[0] += ' ' + stringM.pop(1)
+                info = Data(*stringM)
+                with open(files[2], 'a') as fileN:
+                    fileN.write(info.file_name)
+                    fileN.write('\r')
+    elif comand == "4":
+        with open('MOCK_DATA.txt', 'r') as readOn:
+            for i in readOn:
+                stringM = i.split()
+                stringM[0] += ' ' + stringM.pop(1)
+                if len(stringM) > 4:
+                    stringM[0] += ' ' + stringM.pop(1)
+                info = Data(*stringM)
+                with open(files[3], 'a') as colorN:
+                    colorN.write(info.color)
+                    colorN.write('\r')
+    elif comand == "5":
+        break
+    else:
+        print("Нет такой меню")
+
+
+
+
 
 def RemList():
     file = open('names.txt', 'w')
@@ -75,4 +107,3 @@ def RemList():
 
     file = open('color.txt', 'w')
     file.close()
-MainFunc()
