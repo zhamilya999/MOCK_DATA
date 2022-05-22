@@ -89,7 +89,7 @@ while 1:
     elif comand == "5":
         break
     else:
-        print("Нет такой меню")
+        print("Такого нет в меню")
 
 
 
